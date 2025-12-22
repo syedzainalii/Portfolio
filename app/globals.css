@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-lightHover: #fcf4ff;
+  --color-darkHover: #282C34;
+  --color-darkTheme: #1A1A1B;
+  
+  --font-family-outfit: Outfit, sans-serif;
+  --font-family-ovo: Ovo, serif;
+  
+  --shadow-black: 4px 4px 0 #000;
+  --shadow-white: 4px 4px 0 #fff;
+}
+
+@layer base { 
+  html { 
+    scroll-behavior: smooth !important; 
+  } 
+}
