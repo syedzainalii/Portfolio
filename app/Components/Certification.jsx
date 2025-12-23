@@ -208,9 +208,9 @@ const Certification = () => {
                   }
                   className="group relative w-full py-3 px-4 flex items-center justify-center gap-2 
                              bg-transparent text-black dark:text-white 
-                             border-2 border-black dark:border-white 
+                             border-2 border-darkHover dark:border-white 
                              rounded-xl font-bold overflow-hidden transition-all duration-300
-                             hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+                             hover:bg-darkTheme hover:text-white dark:hover:bg-white dark:hover:text-black"
                 >
                   <FaExternalLinkAlt className="text-sm transition-transform group-hover:rotate-12" />
                   <span>View Certificate</span>
