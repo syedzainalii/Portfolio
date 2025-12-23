@@ -57,7 +57,7 @@ const About = ({ isDarkMode }) => {
         >
           <div className='mb-6 font-Ovo text-gray-700 dark:text-white/90 text-base sm:text-lg leading-relaxed text-left'>
             <p className='mb-4'>
-              I'm a NED University of Engineering and Technology student pursuing Bachelor of Engineering in Mechanical Engineering, 
+              I'm a studdent of NED University of Engineering and Technology, pursuing Bachelor of Engineering in Mechanical Engineering, 
               with training in injection molding, machining, and assembly processes. Gained hands-on experience at Sui Southern Gas 
               Company Limited (SSGC) Meter Manufacturing Plant, engaging with quality control, plastic molding, and painting 
               processes that ensure high production standards. 
