@@ -48,17 +48,22 @@ const Services = () => {
             className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10'
         >
             {serviceData.map(({icon, title, description, link}, index) => (
-                /* We wrap the whole card in the Link. 
-                   Ensure 'link' in assets.js is exactly 'backend-programming'
-                */
-                <Link href={`/services/${link}`} key={index}>
+                <Link href={`/services/${link}`} key={index} className="flex">
                     <motion.div 
-                        whileHover={{scale:1.05}}
+                        whileHover="hover"
                         className='border border-gray-400 dark:border-gray-600 rounded-2xl p-8 cursor-pointer 
-                                   hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] 
+                                   hover:bg-lightHover duration-500 hover:shadow-[4px_4px_0_#000] 
                                    dark:bg-darkHover dark:hover:shadow-white flex flex-col h-full'
                     >
-                        <Image src={icon} alt={title} className='w-10' />
+                        {/* Icon Animation */}
+                        <motion.div
+                            variants={{
+                                hover: { scale: 1.1 }
+                            }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <Image src={icon} alt={title} className='w-10' />
+                        </motion.div>
                         
                         <h3 className='text-lg my-4 font-semibold dark:text-white'>
                             {title}
@@ -68,9 +73,30 @@ const Services = () => {
                             {description}
                         </p>
 
+                        {/* Enhanced Read More Button */}
                         <div className='flex items-center gap-2 text-sm mt-auto font-medium text-gray-700 dark:text-white'> 
-                            Read more 
-                            <Image alt='arrow' src={assets.right_arrow} className='w-4'/>
+                            <span className='relative'>
+                                Read more
+                                {/* Underline that expands on hover */}
+                                <motion.span 
+                                    variants={{
+                                        hover: { width: '100%' }
+                                    }}
+                                    initial={{ width: 0 }}
+                                    className='absolute left-0 -bottom-1 h-[1px] bg-black dark:bg-white'
+                                    transition={{ duration: 0.3 }}
+                                />
+                            </span>
+                            
+                            {/* Arrow that slides on hover */}
+                            <motion.div
+                                variants={{
+                                    hover: { x: 5 }
+                                }}
+                                transition={{ type: 'spring', stiffness: 300 }}
+                            >
+                                <Image alt='arrow' src={assets.right_arrow} className='w-4'/>
+                            </motion.div>
                         </div>
                     </motion.div>
                 </Link>

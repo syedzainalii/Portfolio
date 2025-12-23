@@ -128,8 +128,6 @@ const Certification = () => {
     >
       <div className="max-w-7xl mx-auto py-12">
 
-        {/* ===== YOUR ORIGINAL JSX BELOW (UNCHANGED) ===== */}
-
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -162,7 +160,7 @@ const Certification = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCertifications.map(cert => {
             const IconComponent = cert.icon;
             const IssuerIcon = cert.issuerIcon;
@@ -170,10 +168,10 @@ const Certification = () => {
             return (
               <motion.div
                 key={cert.id}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white dark:bg-darkHover rounded-2xl border border-gray-500  p-6 border border-gray-200 dark:border-gray-700
-                           hover:bg-lightHover hover:shadow-[4px_4px_0_#000]
-                           dark:hover:bg-darkHover dark:hover:shadow-[4px_4px_0_#fff]
+                whileHover={{ y: -8 }}
+                className="bg-white dark:bg-darkHover rounded-2xl p-6 border border-gray-200 dark:border-gray-700
+                           hover:bg-lightHover hover:shadow-[6px_6px_0_#000]
+                           dark:hover:bg-darkHover dark:hover:shadow-[6px_6px_0_#fff]
                            transition-all flex flex-col h-full"
               >
                 <div className="flex items-start mb-6">
@@ -194,22 +192,29 @@ const Certification = () => {
                 </p>
 
                 <div className="flex justify-between mb-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <div>
+                  <div className="text-sm">
                     <FaCalendarAlt className="inline mr-2" />
                     {cert.date}
                   </div>
-                  <span className="text-green-600 font-semibold">Verified</span>
+                  <span className="text-green-600 font-bold text-sm">VERIFIED</span>
                 </div>
 
-                <button
+                {/* PREMIUM INTERACTIVE BUTTON */}
+                <motion.button
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={() =>
                     handleViewCertificate(cert.certificateUrl, cert.title)
                   }
-                  className="w-full py-3 px-4 bg-white text-black dark:bg-darkHover border dark:border-white dark:text-white rounded-xl font-medium hover:shadow-lg transition-all"
+                  className="group relative w-full py-3 px-4 flex items-center justify-center gap-2 
+                             bg-transparent text-black dark:text-white 
+                             border-2 border-black dark:border-white 
+                             rounded-xl font-bold overflow-hidden transition-all duration-300
+                             hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
                 >
-                  <FaExternalLinkAlt className="inline mr-2" />
-                  View Certificate
-                </button>
+                  <FaExternalLinkAlt className="text-sm transition-transform group-hover:rotate-12" />
+                  <span>View Certificate</span>
+                </motion.button>
               </motion.div>
             );
           })}
