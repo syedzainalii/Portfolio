@@ -47,15 +47,27 @@ className='grid grid-cols-auto gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-
         <motion.div 
         whileHover={{scale:1.05}}
         
-        key={index} className='border border-gray-400 border dark:border-gray-600  rounded-2xl p-6 cursor-pointer 
-                    hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] 
-                    break-words hyphens-auto dark:bg-darkHover dark:hover:bg-darkHover dark:hover:shadow-white '>
-            <Image src={icon} alt='' className='w-14 '/>
-            <h3 className='text-lg my-2 font-semi-bold dark:text-white'>{title}</h3>
-            <p className='text-sm text-gray-700 leading-5 dark:text-white/80'>{description}</p>
-        <a href={link} className='flex items-center gap-2 text-sm  mt-4'> 
-          Read more <Image alt='' src={assets.right_arrow} className='w-4'/>
-        </a>
+key={index}
+    className='border border-gray-400 dark:border-gray-600 rounded-2xl p-6 cursor-pointer 
+               hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] 
+               break-words hyphens-auto dark:bg-darkHover dark:hover:bg-darkHover dark:hover:shadow-white
+               flex flex-col h-full' 
+>
+    <Image src={icon} alt='' className='w-14' />
+    
+    <h3 className='text-lg my-2 font-semibold dark:text-white'>
+        {title}
+    </h3>
+    
+    <p className='text-sm text-gray-700 leading-5 dark:text-white/80 mb-4'>
+        {description}
+    </p>
+
+
+    <a href={link} className='flex items-center gap-2 text-sm mt-auto pt-1'> 
+        Read more 
+        <Image alt='' src={assets.right_arrow} className='w-4'/>
+    </a>
         </motion.div>
     ))}
     </motion.div>

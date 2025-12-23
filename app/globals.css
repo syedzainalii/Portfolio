@@ -1,21 +1,62 @@
 @import "tailwindcss";
 
+/* 1. Custom Dark Mode Variant */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* 2. Theme Configuration */
 @theme {
   --color-lightHover: #fcf4ff;
   --color-darkHover: #282C34;
   --color-darkTheme: #1A1A1B;
   
-  --font-family-outfit: Outfit, sans-serif;
-  --font-family-ovo: Ovo, serif;
+  --font-family-outfit: var(--font-outfit), Outfit, sans-serif;
+  --font-family-ovo: var(--font-ovo), Ovo, serif;
   
   --shadow-black: 4px 4px 0 #000;
   --shadow-white: 4px 4px 0 #fff;
 }
 
+/* 3. Base Layer - Fixing the "Fitting" Issues */
 @layer base { 
   html { 
-    scroll-behavior: smooth !important; 
+    scroll-behavior: smooth !important;
+    /* Prevents the root from ever growing wider than the screen */
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   } 
+
+  body {
+    /* Critical for Mobile View: Sets a hard limit on width */
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Apply your dark theme background by default */
+    @apply bg-white text-black dark:bg-darkTheme dark:text-white;
+  }
+
+  /* Ensure all elements use border-box so padding doesn't add to width */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Auto-responsive images: They will never "poke out" of their containers */
+  img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* 4. Utility Classes (Optional but helpful) */
+@layer utilities {
+  .section-padding {
+    @apply px-6 sm:px-10 lg:px-[12%] py-10;
+  }
 }

@@ -1,7 +1,5 @@
 'use client'
-import Image from "next/image";
 import Navbar from "./Components/Navbar";
-import Head from "next/head";
 import Header from "./Components/Header";
 import About from "./Components/About";
 import Services from "./Components/Services";
@@ -13,20 +11,17 @@ import Skills from "./Components/Skills";
 import Experience from "./Components/Experience";
 import Certification from "./Components/Certification";
 
-
 export default function Home() {
-
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.
-    matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && 
+        window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       setIsDarkMode(true)
     } else {
       setIsDarkMode(false)
     }
   }, [])
-
 
   useEffect(() => {
     if (isDarkMode) {
@@ -39,17 +34,22 @@ export default function Home() {
   }, [isDarkMode])
 
   return (
-    <>
-    <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
-    <Header isDarkMode={isDarkMode} />
-    <About isDarkMode={isDarkMode} />
-    <Skills isDarkMode={isDarkMode}/>
-    <Services isDarkMode={isDarkMode} />
-    <Work isDarkMode={isDarkMode} />
-    <Experience isDarkMode={isDarkMode} />
-    <Certification isDarkMode={isDarkMode} />
-    <Contact isDarkMode={isDarkMode} />
-    <Footer isDarkMode={isDarkMode} />
-     </>
+    <div className="min-h-screen font-outfit overflow-x-hidden">
+      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
+      
+
+      <main className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-screen-2xl">
+        <Header isDarkMode={isDarkMode} />
+        <About isDarkMode={isDarkMode} />
+        <Skills isDarkMode={isDarkMode}/>
+        <Services isDarkMode={isDarkMode} />
+        <Work isDarkMode={isDarkMode} />
+        <Experience isDarkMode={isDarkMode} />
+        <Certification isDarkMode={isDarkMode} />
+        <Contact isDarkMode={isDarkMode} />
+      </main>
+
+      <Footer isDarkMode={isDarkMode} />
+    </div>
   );
 }
