@@ -208,7 +208,7 @@ const Certification = () => {
                   }
                   className="group relative w-full py-3 px-4 flex items-center justify-center gap-2 
                              bg-transparent text-black dark:text-white 
-                             border-2 border-darkHover dark:border-white 
+                            border border-gray-400 dark:border-gray-600 
                              rounded-xl font-bold overflow-hidden transition-all duration-300
                              hover:bg-darkTheme hover:text-white dark:hover:bg-white dark:hover:text-black"
                 >
