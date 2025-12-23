@@ -53,7 +53,7 @@ import github_logo_dark from './github-logo-dark.png';
 import linkendin_logo from './linkendin-logo.png';
 import linkendin_logo_dark from './linkendin-logo-dark.png';
 import location from './location.png';
-import location_dark from './location-dark.png' ;
+import location_dark from './location-dark.png';
 import phone from './phone.png';
 import phone_dark from './phone-dark.png';
 import download_icon_dark from './download-icon-dark.png';
@@ -120,7 +120,6 @@ export const assets = {
     phone_dark,
     download_icon_dark,
     right_arrow_light,
-
 };
 
 export const workData = [
@@ -139,36 +138,157 @@ export const workData = [
         description: 'Web Design',
         bgImage: '/work-3.png',
     },
-    
     {
         title: 'Data Visualization',
         description: 'Analysing Data',
         bgImage: '/work-4.png',
     },
     {
-        title:' Video Editing',
+        title: 'Video Editing',
         description: 'Promotional Video',
         bgImage: '/work-5.png',
     },
-]
+];
 
 export const serviceData = [
-    { icon: assets.cad_modeling, title: 'CAD Modeling', description: 'Creating 3D models and technical drawings...', link: '' },
-    { icon: assets.fea_simulation, title: 'FEA Simulation', description: 'Performing Finite Element Analysis for structural simulation...', link: '' },
-    { icon: assets.backend_programming, title: 'Backend Programming', description: 'Solving complex problems through efficient backend solutions...', link: '' },
-    { icon: assets.website_designing, title: 'Web design', description: 'Developing websites and web applications...', link: '' },
-    { icon: assets.data_visualization, title: 'Data Visualization', description: 'Bringing data to life through interactive visualizations...', link: '' },
-    { icon: assets.video_editing, title: 'Video Editing', description: 'Editing and producing high-quality video content...', link: '' },
-]
+    { 
+        icon: assets.cad_modeling, 
+        title: 'CAD Modeling', 
+        description: 'Creating 3D models and technical drawings...', 
+        link: 'cad-modeling',
+        detailedDescription: 'I provide comprehensive CAD modeling services using industry-standard software like SolidWorks and Dassault Systèmes tools. Whether you need product design, mechanical parts, or complex assemblies, I deliver precise and manufacturable 3D models.',
+        includes: [
+            '3D parametric modeling',
+            'Assembly design and validation',
+            'Technical drawings and documentation',
+            'File conversion (STEP, IGES, STL, etc.)',
+            'Design for manufacturing (DFM) consultation'
+        ],
+        process: [
+            { title: 'Requirements Gathering', description: 'Understanding your specifications and design intent' },
+            { title: '3D Modeling', description: 'Creating detailed CAD models with parametric features' },
+            { title: 'Review & Iteration', description: 'Presenting designs and incorporating your feedback' },
+            { title: 'Final Delivery', description: 'Providing models in required formats with documentation' }
+        ]
+    },
+    { 
+        icon: assets.fea_simulation, 
+        title: 'FEA Simulation', 
+        description: 'Performing Finite Element Analysis for structural simulation...', 
+        link: 'fea-simulation',
+        detailedDescription: 'Comprehensive FEA services using ANSYS to validate and optimize your designs. I perform stress analysis, thermal analysis, modal analysis, and more to ensure your products meet safety and performance requirements.',
+        includes: [
+            'Static structural analysis',
+            'Thermal analysis',
+            'Modal and dynamic analysis',
+            'Fatigue and failure analysis',
+            'Detailed reports with visualizations'
+        ],
+        process: [
+            { title: 'Model Preparation', description: 'Simplifying and meshing your CAD geometry' },
+            { title: 'Analysis Setup', description: 'Applying loads, constraints, and material properties' },
+            { title: 'Simulation', description: 'Running analyses and validating results' },
+            { title: 'Reporting', description: 'Delivering comprehensive analysis reports' }
+        ]
+    },
+    { 
+        icon: assets.backend_programming, 
+        title: 'Backend Programming', 
+        description: 'Solving complex problems through efficient backend solutions...', 
+        link: 'backend-programming',
+        detailedDescription: 'I develop custom backend solutions, automation scripts, and APIs tailored to engineering and business needs. Specializing in Python, MATLAB, and modern web technologies.',
+        includes: [
+            'Custom automation scripts',
+            'API development and integration',
+            'Database design and optimization',
+            'Engineering calculations tools',
+            'System integration solutions'
+        ],
+        process: [
+            { title: 'Discovery', description: 'Understanding your workflow and automation needs' },
+            { title: 'Development', description: 'Building and testing the solution' },
+            { title: 'Deployment', description: 'Implementation and training' },
+            { title: 'Support', description: 'Ongoing maintenance and updates' }
+        ]
+    },
+    { 
+        icon: assets.website_designing, 
+        title: 'Web design', 
+        description: 'Developing websites and web applications...', 
+        link: 'web-design',
+        detailedDescription: 'Creating modern, responsive websites and web applications that deliver exceptional user experiences. From landing pages to full-stack applications, I build solutions that work.',
+        includes: [
+            'Responsive web design',
+            'Frontend development',
+            'UI/UX optimization',
+            'Performance optimization',
+            'Cross-browser compatibility'
+        ],
+        process: [
+            { title: 'Planning', description: 'Understanding your goals and target audience' },
+            { title: 'Design', description: 'Creating wireframes and visual designs' },
+            { title: 'Development', description: 'Building the website with modern technologies' },
+            { title: 'Launch', description: 'Deploying and monitoring the live site' }
+        ]
+    },
+    { 
+        icon: assets.data_visualization, 
+        title: 'Data Visualization', 
+        description: 'Bringing data to life through interactive visualizations...', 
+        link: 'data-visualization',
+        detailedDescription: 'Transform complex data into clear, actionable insights using Tableau, Power BI, and custom visualization solutions. I help you make data-driven decisions with confidence.',
+        includes: [
+            'Interactive dashboards',
+            'Custom data visualizations',
+            'Business intelligence reports',
+            'Data analysis and insights',
+            'Automated reporting systems'
+        ],
+        process: [
+            { title: 'Data Assessment', description: 'Understanding your data sources and goals' },
+            { title: 'Design', description: 'Creating effective visualization strategies' },
+            { title: 'Development', description: 'Building interactive dashboards and reports' },
+            { title: 'Training', description: 'Helping your team use the tools effectively' }
+        ]
+    },
+    { 
+        icon: assets.video_editing, 
+        title: 'Video Editing', 
+        description: 'Editing and producing high-quality video content...', 
+        link: 'video-editing',
+        detailedDescription: 'Professional video editing services for promotional content, tutorials, presentations, and more. I create engaging videos that capture attention and deliver your message effectively.',
+        includes: [
+            'Video cutting and trimming',
+            'Color correction and grading',
+            'Audio editing and mixing',
+            'Motion graphics and titles',
+            'Export in multiple formats'
+        ],
+        process: [
+            { title: 'Brief', description: 'Understanding your video goals and requirements' },
+            { title: 'Editing', description: 'Crafting your story through precise editing' },
+            { title: 'Review', description: 'Incorporating your feedback and revisions' },
+            { title: 'Delivery', description: 'Providing final videos in required formats' }
+        ]
+    },
+];
 
 export const infoList = [
-     { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.E. Mechanical Engineering from NED UET' },
+    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.E. Mechanical Engineering from NED UET' },
     { icon: assets.experience_icon, iconDark: assets.experience_icon_dark, title: 'Electives', description: 'Ai & Iot \n Mechatronics \n Data Sciences \IT Automation with Python  \n Project Management' },
     { icon: assets.activity_icon, iconDark: assets.activity_icon_dark, title: 'Activities', description: 'Group Leader - AI & IOT Exhibition' },
     { icon: assets.language_icon, iconDark: assets.language_icon_dark, title: 'Languages', description: ' English - Full Professional Proficiency \n Urdu - Native Proficiency'},
-    
 ];
 
 export const toolsData = [
-    assets.solidworks, assets.dassault, assets.ansys, assets.matlab ,assets.vscode ,assets.power_bi ,assets.tableau ,assets.jira ,assets.wrike ,assets.microsoft
+    assets.solidworks, 
+    assets.dassault, 
+    assets.ansys, 
+    assets.matlab,
+    assets.vscode,
+    assets.power_bi,
+    assets.tableau,
+    assets.jira,
+    assets.wrike,
+    assets.microsoft
 ];
