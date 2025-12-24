@@ -70,7 +70,7 @@ const Work = () => {
           href="/work"
           className="relative group flex items-center gap-2 border border-gray-400 rounded-full px-10 py-3 mt-16 overflow-hidden transition-all duration-500 hover:-translate-y-1"
         >
-          <span className="relative z-10 flex items-center gap-2 text-gray-700 group-hover:text-white transition-colors duration-500">
+          <span className="relative z-10 flex items-center gap-2 text-gray-700 group-hover:text-white dark:text-white dark:group-hover:text-black transition-colors duration-500">
             Show more
             <Image
               src={assets.right_arrow_bold}
@@ -79,7 +79,7 @@ const Work = () => {
             />
           </span>
 
-          <span className="absolute inset-0 w-0 group-hover:w-full transition-all duration-500 bg-black" />
+          <span className="absolute inset-0 w-0 group-hover:w-full transition-all duration-500 dark:bg-white bg-black" />
         </Link>
       </div>
     </section>

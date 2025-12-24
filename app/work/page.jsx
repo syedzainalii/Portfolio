@@ -22,7 +22,7 @@ const WorkPage = () => {
       </p>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 dark:text-black gap-8">
         {workData.map((project, index) => {
           const slug = project.title.toLowerCase().replace(/\s+/g, "-");
 
@@ -36,7 +36,7 @@ const WorkPage = () => {
               >
                 <div className="absolute inset-0 bg-black/40 rounded-xl" />
 
-                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[85%] bg-white rounded-md p-4 flex justify-between items-center">
+                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[85%] dark:text-black bg-white rounded-md p-4 flex justify-between items-center">
                   <div className="overflow-hidden">
                     <h2 className="font-semibold truncate">{project.title}</h2>
                     <p className="text-xs text-gray-600 truncate">
