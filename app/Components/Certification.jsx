@@ -10,7 +10,6 @@ import {
   FaCalendarAlt,
   FaProjectDiagram
 } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 
 const Certification = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -129,18 +128,14 @@ const Certification = () => {
       <div className="max-w-7xl mx-auto py-12">
 
         {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-        >
+        <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Certifications & Credentials
           </h1>
           <p className="text-lg max-w-3xl mx-auto">
             Professional certifications and credentials that validate my expertise and commitment to continuous learning.
           </p>
-        </motion.div>
+        </div>
 
         {/* Filters */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -166,13 +161,12 @@ const Certification = () => {
             const IssuerIcon = cert.issuerIcon;
 
             return (
-              <motion.div
+              <div
                 key={cert.id}
-                whileHover={{ y: -8 }}
                 className="bg-white dark:bg-darkHover rounded-2xl p-6 border border-gray-200 dark:border-gray-700
                            hover:bg-lightHover hover:shadow-[6px_6px_0_#000]
                            dark:hover:bg-darkHover dark:hover:shadow-[6px_6px_0_#fff]
-                           transition-all flex flex-col h-full"
+                           hover:-translate-y-2 transition-all duration-300 flex flex-col h-full"
               >
                 <div className="flex items-start mb-6">
                   <div className={getIconClass(cert.iconBg)}>
@@ -200,9 +194,7 @@ const Certification = () => {
                 </div>
 
                 {/* PREMIUM INTERACTIVE BUTTON */}
-                <motion.button
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                <button
                   onClick={() =>
                     handleViewCertificate(cert.certificateUrl, cert.title)
                   }
@@ -210,12 +202,13 @@ const Certification = () => {
                              bg-transparent text-black dark:text-white 
                             border border-gray-400 dark:border-gray-600 
                              rounded-xl font-bold overflow-hidden transition-all duration-300
-                             hover:bg-darkTheme hover:text-white dark:hover:bg-white dark:hover:text-black"
+                             hover:bg-darkTheme hover:text-white dark:hover:bg-white dark:hover:text-black
+                             active:scale-95 hover:scale-[1.02]"
                 >
                   <FaExternalLinkAlt className="text-sm transition-transform group-hover:rotate-12" />
                   <span>View Certificate</span>
-                </motion.button>
-              </motion.div>
+                </button>
+              </div>
             );
           })}
         </div>

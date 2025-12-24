@@ -257,34 +257,24 @@ export default function Skills() {
         }
       `}} />
       
-      <motion.div
-        initial={{opacity: 0}}
-        whileInView={{opacity:1}}
-        transition={{duration:0.8}}
+      <div
+
       
       id='skills' className='w-full px-[12%] py10 scroll-mt-20'>
         
-        <motion.h4 
-        initial={{y:-20, opacity: 0 }}
-        whileInView={{y:0, opacity:1 }}
-        transition={{duration:0.5, delay:0.2}}
+        <h4 
+
         
-        className='text-center mb-1 text-xl font-Ovo'>My Expertise</motion.h4>
+        className='text-center mb-1 text-xl font-Ovo'>My Expertise</h4>
         
-        <motion.h2 
-                initial={{y:-20, opacity: 0 }}
-        whileInView={{y:0, opacity:1 }}
-        transition={{duration:0.5, delay:0.4}}
+        <h2  
+        className='text-center text-5xl font-Ovo'>My Technical Skills</h2>
         
-        className='text-center text-5xl font-Ovo'>My Technical Skills</motion.h2>
-        
-        <motion.p 
-        initial={{y:-20, opacity: 0 }}
-        whileInView={{y:0, opacity:1 }}
-        transition={{duration:0.5, delay:0.6}}
+        <p 
+
         
         className='text-center max-w-2xl mx-auto mt-5 mb-2 font-Ovo'>
-          Explore my comprehensive skill set across various technologies and frameworks </motion.p>
+          Explore my comprehensive skill set across various technologies and frameworks </p>
       
       <div className="relative h-[650px] flex flex-col items-center overflow-visible py-8">
         <div className="w-full max-w-7xl relative skills-card-container">
@@ -602,7 +592,7 @@ export default function Skills() {
           </button>
         </div>
       </div>
-      </motion.div>
+      </div>
     </>
   );
 }
