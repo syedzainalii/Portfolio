@@ -27,10 +27,10 @@ const Services = () => {
                 <Link href={`/services/${link}`} key={index} className="flex group">
                     <div 
                         className='border border-gray-400 dark:border-gray-600 rounded-2xl p-8 cursor-pointer 
-                                   hover:bg-lightHover duration-500 hover:shadow-[4px_4px_0_#000] 
-                                   dark:bg-darkHover dark:hover:shadow-white flex flex-col h-full w-full'
+                                   hover:bg-lightHover hover:shadow-[4px_4px_0_#000] 
+                                   dark:bg-darkHover dark:hover:bg-darkHover dark:hover:shadow-[4px_4px_0_#fff] 
+                                   duration-500 flex flex-col h-full w-full'
                     >
-                        {/* Icon Container - Scales on group hover */}
                         <div className='transition-transform duration-300 group-hover:scale-110'>
                             <Image src={icon} alt={title} className='w-10' />
                         </div>
@@ -43,15 +43,12 @@ const Services = () => {
                             {description}
                         </p>
 
-                        {/* Enhanced Read More Button Area */}
                         <div className='flex items-center gap-2 text-sm mt-auto font-medium text-gray-700 dark:text-white'> 
                             <span className='relative'>
                                 Read more
-                                {/* Underline that expands on group hover */}
                                 <span className='absolute left-0 -bottom-1 h-[1px] bg-black dark:bg-white w-0 group-hover:w-full transition-all duration-300' />
                             </span>
                             
-                            {/* Arrow that slides on group hover */}
                             <div className='transition-transform duration-300 group-hover:translate-x-1.5'>
                                 <Image alt='arrow' src={assets.right_arrow} className='w-4'/>
                             </div>
